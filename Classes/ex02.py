@@ -26,9 +26,9 @@ class Quadrado:
 
     def __str__(self):
         return """
-╔═══════════╤═══════╤══════╗
-║ Perímetro │ Área  │ Lado ║
-╟───────────┼───────┼──────╢
-║ {0:<9.1f} │ {1:<5.1f} │ {2:<4.1f} ║
-╚═══════════╧═══════╧══════╝
-""".format(self.perimetro, self.area, self.lado)
+╔══════╤═══════╤═══════════╗
+║ Lado │ Área  │ Perímetro ║
+╟──────┼───────┼───────────╢
+║ {0:<4.1f} │ {1:<5.1f} │ {2:<9.1f} ║
+╚══════╧═══════╧═══════════╝
+""".format(self.lado, self.area, self.perimetro)

@@ -15,8 +15,8 @@ class Bola:
     def mostra_cor(self):
         return self.cor
 
-    def troca_cor(self, x):
-        self.cor = x
+    def troca_cor(self, cor):
+        self.cor = cor
 
     def __str__(self):
         return """

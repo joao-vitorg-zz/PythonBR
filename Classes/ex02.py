@@ -8,13 +8,15 @@ Classe Quadrado: Crie uma classe que modele um quadrado:
 
 class Quadrado:
     def __init__(self, lado):
-        self.lado = lado
+        self._lado = lado
 
-    def get_lado(self):
-        return self.lado
+    @property
+    def lado(self):
+        return self._lado
 
-    def set_lado(self, lado):
-        self.lado = lado
+    @lado.setter
+    def lado(self, x):
+        self._lado = x
 
     @property
     def area(self):
@@ -26,9 +28,16 @@ class Quadrado:
 
     def __str__(self):
         return """
-╔══════╤═══════╤═══════════╗
-║ Lado │ Área  │ Perímetro ║
-╟──────┼───────┼───────────╢
-║ {0:<4.1f} │ {1:<5.1f} │ {2:<9.1f} ║
-╚══════╧═══════╧═══════════╝
+╔═══════╤════════╤═══════════╗
+║ Lado  │  Área  │ Perímetro ║
+╟───────┼────────┼───────────╢
+║ {0:<5.1f} │ {1:<6.1f} │ {2:<9.1f} ║
+╚═══════╧════════╧═══════════╝
 """.format(self.lado, self.area, self.perimetro)
+
+
+if __name__ == '__main__':
+    lado = float(input('Lado: '))
+
+    quadrado = Quadrado(lado)
+    print(quadrado)

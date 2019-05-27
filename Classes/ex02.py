@@ -8,15 +8,7 @@ Classe Quadrado: Crie uma classe que modele um quadrado:
 
 class Quadrado:
     def __init__(self, lado):
-        self._lado = lado
-
-    @property
-    def lado(self):
-        return self._lado
-
-    @lado.setter
-    def lado(self, x):
-        self._lado = x
+        self.lado = lado
 
     @property
     def area(self):

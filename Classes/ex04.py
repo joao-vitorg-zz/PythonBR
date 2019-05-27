@@ -32,7 +32,7 @@ class Pessoa:
     def __str__(self):
         return """
 ╔════════╤═══════╤═══════╤════════╗
-║  Nome  │ Idade │ Peso  │ Altura ║
+║ Nome   │ Idade │ Peso  │ Altura ║
 ╟────────┼───────┼───────┼────────╢
 ║ {:<6.6} │ {:<5} │ {:<5.1f} │ {:<6.1f} ║
 ╚════════╧═══════╧═══════╧════════╝
@@ -41,9 +41,9 @@ class Pessoa:
 
 if __name__ == '__main__':
     nome = input('Nome: ')
-    idade = input('Idade: ')
-    peso = input('Peso: ')
-    altura = input('Altura: ')
+    idade = float(input('Idade: '))
+    peso = float(input('Peso: '))
+    altura = float(input('Altura: '))
 
     pessoa = Pessoa(nome, idade, peso, altura)
     print(pessoa)

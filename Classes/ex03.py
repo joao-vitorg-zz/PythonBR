@@ -22,8 +22,15 @@ class Retangulo:
     def perimetro(self):
         return 2 * (self.largura + self.altura)
 
-    def piso(self, base, altura):
-        return self.area / (base * altura)
+    def piso(self, largura, altura):
+        pisos = self.area / (largura * altura)
+        return """
+╔════════════╗
+║ Pisos(qty) ║
+╟────────────╢
+║ {0:<10.1f} ║
+╚════════════╝
+""".format(pisos)
 
     def __str__(self):
         return """
@@ -33,3 +40,15 @@ class Retangulo:
 ║ {0:<7.1f} │ {1:<6.1f} │ {2:<6.1f} │ {3:<9.1f} ║
 ╚═════════╧════════╧════════╧═══════════╝
 """.format(self.largura, self.altura, self.area, self.perimetro)
+
+
+if __name__ == '__main__':
+    largura = float(input('Largura: '))
+    altura = float(input('Altura: '))
+
+    retangulo = Retangulo(largura, altura)
+    print(retangulo)
+
+    p_largura = float(input('Largura do piso: '))
+    p_altura = float(input('Alturado piso: '))
+    print(retangulo.piso(p_largura, p_altura))

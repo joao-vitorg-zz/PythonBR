@@ -35,17 +35,15 @@ class Tamagushi:
     def fome(self):
         return self._fome - self.tempo // 0.5
 
-    @fome.setter
-    def fome(self, x):
-        self._fome = self.analiza(x)
+    def alimetar(self):
+        self._fome = self.analiza(self.fome + 20)
 
     @property
     def saude(self):
         return self._saude - self.tempo // 1
 
-    @saude.setter
-    def saude(self, x):
-        self._saude = self.analiza(x)
+    def curar(self):
+        self._saude = self.analiza(self.saude + 10)
 
     @property
     def idade(self):
@@ -54,12 +52,3 @@ class Tamagushi:
     @property
     def humor(self):
         return self.analiza((self.saude + self.fome) / 2)
-
-    def __str__(self):
-        return """
-╔════════╤═════════╤══════════╤══════════╤═══════╗
-║ Nome   │ Fome(%) │ Saúde(%) │ Humor(%) │ Idade ║
-╟────────┼─────────┼──────────┼──────────┼───────╢
-║ {:<6.6} │ {:<7.2f} │ {:<8.2f} │ {:<8.2f} │ {:<5.0f} ║
-╚════════╧═════════╧══════════╧══════════╧═══════╝
-""".format(self.nome, self.fome, self.saude, self.humor, self.idade)

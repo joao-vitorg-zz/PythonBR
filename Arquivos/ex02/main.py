@@ -8,30 +8,24 @@ seguinte arquivo, chamado "usuarios.json":
 """
 
 
-def get_user():
+def read_usuarios():
     with open('usuarios.json') as f:
         user = load(f)
         total = sum(user.values())
         media = total / len(user)
-    return user, total, media
+        users = [[n, name, byte / 1048576, (byte * 100) / total] for n, (name, byte) in enumerate(user.items())]
+
+    return [total / 1048576, media / 1048576] + users
 
 
-def format_user(user, total):
-    for n, (name, byte) in enumerate(user.items(), 1):
-        mb = byte / 1048576
-        yield n, name, mb, (byte * 100) / total
-
-
-def set_relatorio():
-    user, total, media = get_user()
-
-    table = """╔═════════════════════════════════════════════════╗
+def write_relatorio():
+    table, users = """╔═════════════════════════════════════════════════╗
 ║                    ACME Inc.                    ║
 ╠════╤════════════╤══════════════════════╤════════╣
 ║    │ Usuário    │ Espaço utilizado(MB) │ uso(%) ║
-╟────┼────────────┼──────────────────────┼────────╢"""
+╟────┼────────────┼──────────────────────┼────────╢""", read_usuarios()
 
-    for values in format_user(user, total):
+    for values in users[2:]:
         table += "\n║ {:<2} │ {:<10.10} │ {:<20.2f} │ {:<6.2f} ║".format(*values)
 
     table += """\n╟────┴────────────┴──────────────────────┴────────╢
@@ -39,11 +33,11 @@ def set_relatorio():
 ║ Espaço total ocupado(MB): {:<21.2f} ║
 ║ Espaço médio ocupado(MB): {:<21.2f} ║
 ╚═════════════════════════════════════════════════╝
-""".format(total / 1048576, media / 1048576)
+""".format(*users[:3])
 
     with open('relatorio.txt', 'w') as f:
         f.write(table)
 
 
 if __name__ == '__main__':
-    set_relatorio()
+    write_relatorio()

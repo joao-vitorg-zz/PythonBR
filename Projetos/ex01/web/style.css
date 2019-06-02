@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+  background: #3e94ec;
+}
+
+table {
+  box-shadow: 5px 5px 10px #0000004d;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th {
+  background: #1b1e24;
+  color: #D5DDE5;
+  font-size: 23px;
+  padding: 24px;
+}
+
+td {
+  border-right: 1px solid #C1C3D1;
+  background: #FFFFFF;
+  color: #666B85;
+  font-size: 18px;
+  padding: 15px;
+}
+
+/* mouse */
+tr:hover td {
+  background: #4E5066;
+  color: #FFFFFF;
+}
+
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+/* cores alternadas */
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}

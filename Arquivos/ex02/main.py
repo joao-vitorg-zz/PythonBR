@@ -13,7 +13,7 @@ def read_usuarios():
         user = load(f)
         total = sum(user.values())
         media = total / len(user)
-        users = [[n, name, byte / 1048576, (byte * 100) / total] for n, (name, byte) in enumerate(user.items())]
+        users = [[name, byte / 1048576, (byte * 100) / total] for name, byte in user.items()]
 
     return [total / 1048576, media / 1048576] + users
 
@@ -25,8 +25,8 @@ def write_relatorio():
 ║    │ Usuário    │ Espaço utilizado(MB) │ uso(%) ║
 ╟────┼────────────┼──────────────────────┼────────╢""", read_usuarios()
 
-    for values in users[2:]:
-        table += "\n║ {:<2} │ {:<10.10} │ {:<20.2f} │ {:<6.2f} ║".format(*values)
+    for n, values in enumerate(users[2:]):
+        table += "\n║ {:<2} │ {:<10.10} │ {:<20.2f} │ {:<6.2f} ║".format(n, *values)
 
     table += """\n╟────┴────────────┴──────────────────────┴────────╢
 ║                                                 ║

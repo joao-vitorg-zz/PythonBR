@@ -16,13 +16,8 @@ class Tamagushi(object):
         self._inicial = time()
 
     @staticmethod
-    def analiza(x):
-        if x > 100:
-            return 100
-        elif x < 0:
-            return 0
-        else:
-            return x
+    def _analiza(x):
+        return max(min(x, 100), 0)
 
     @property
     def tempo(self):
@@ -32,17 +27,9 @@ class Tamagushi(object):
     def fome(self):
         return self._fome - self.tempo // 0.5
 
-    @fome.setter
-    def fome(self, x):
-        self._fome = self.analiza(x)
-
     @property
     def saude(self):
         return self._saude - self.tempo // 1
-
-    @saude.setter
-    def saude(self, x):
-        self._saude = self.analiza(x)
 
     @property
     def idade(self):
@@ -50,4 +37,12 @@ class Tamagushi(object):
 
     @property
     def humor(self):
-        return self.analiza((self.saude + self.fome) / 2)
+        return self._analiza((self.saude + self.fome) / 2)
+
+    @fome.setter
+    def fome(self, x):
+        self._fome = self._analiza(x)
+
+    @saude.setter
+    def saude(self, x):
+        self._saude = self._analiza(x)

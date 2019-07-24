@@ -1,11 +1,11 @@
-"""
-Classe TV: Faça um programa que simule um televisor criando-o como um objeto.
-    a. O usuário deve ser capaz de informar o número do canal e aumentar ou diminuir o volume.
-    b. Certifique-se de que o número do canal e o nível do volume permanecem dentro de faixas válidas.
-"""
+# -*- coding: utf-8 -*-
+
+# Classe TV: Faça um programa que simule um televisor criando-o como um objeto.
+#    a. O usuário deve ser capaz de informar o número do canal e aumentar ou diminuir o volume.
+#    b. Certifique-se de que o número do canal e o nível do volume permanecem dentro de faixas válidas.
 
 
-class TV:
+class TV(object):
     def __init__(self, canal=1, volume=1):
         self.volume = volume
         self.canal = canal

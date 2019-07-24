@@ -1,20 +1,21 @@
+# -*- coding: utf-8 -*-
+
+# Crie uma "porta escondida" no programa do programa do bichinho virtual que
+# mostre os valores exatos dos atributos do objeto. Consiga isto mostrando o objeto quando uma opção secreta,
+# não listada no menu, for informada na escolha do usuário. Dica: acrescente um método especial str() à classe Bichinho.
+
 from time import time
 
-"""
-Crie uma "porta escondida" no programa do programa do bichinho virtual que
-mostre os valores exatos dos atributos do objeto. Consiga isto mostrando o objeto quando uma opção secreta,
-não listada no menu, for informada na escolha do usuário. Dica: acrescente um método especial str() à classe Bichinho.
-"""
 
-
-class Tamagushi:
+class Tamagushi(object):
     def __init__(self, nome):
         self.nome = nome.title()
         self._fome = 100
         self._saude = 100
         self._inicial = time()
 
-    def analiza(self, x):
+    @staticmethod
+    def analiza(x):
         if x > 100:
             return 100
         elif x < 0:

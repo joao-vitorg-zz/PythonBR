@@ -1,12 +1,11 @@
-"""
-Classe Bola: Crie uma classe que modele uma bola:
+# -*- coding: utf-8 -*-
 
-    a. Atributos: Cor, circunferência, material
-    b. Métodos: trocaCor e mostraCor
-"""
+# Classe Bola: Crie uma classe que modele uma bola:
+#    a. Atributos: Cor, circunferência, material
+#    b. Métodos: trocaCor e mostraCor
 
 
-class Bola:
+class Bola(object):
     def __init__(self, material, circulo, cor):
         self.material = material.title()
         self.circulo = circulo

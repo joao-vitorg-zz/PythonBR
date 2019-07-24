@@ -1,12 +1,12 @@
-"""
-Classe Conta Corrente: Crie uma classe para implementar uma conta corrente.
-    a. A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo.
-    b. Os métodos são os seguintes: alterarNome, depósito e saque;
-    c. No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
-"""
+# -*- coding: utf-8 -*-
+
+# Classe Conta Corrente: Crie uma classe para implementar uma conta corrente.
+#    a. A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo.
+#    b. Os métodos são os seguintes: alterarNome, depósito e saque;
+#    c. No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
 
 
-class ContaCorrente:
+class ContaCorrente(object):
     def __init__(self, nome, numero, saldo):
         self.nome = nome.title()
         self.numero = numero

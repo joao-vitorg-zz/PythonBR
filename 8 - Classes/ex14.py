@@ -1,10 +1,10 @@
-"""
-Aprimore a classe do exercício anterior para adicionar o método aumentarSalario (porcentualDeAumento)
-que aumente o salário do funcionário em uma certa porcentagem.
-"""
+# -*- coding: utf-8 -*-
+
+# Aprimore a classe do exercício anterior para adicionar o método aumentarSalario (porcentualDeAumento)
+# que aumente o salário do funcionário em uma certa porcentagem.
 
 
-class Funcionario:
+class Funcionario(object):
     def __init__(self, nome, salario):
         self.nome = nome.title()
         self.salario = salario

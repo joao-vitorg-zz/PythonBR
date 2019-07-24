@@ -1,21 +1,22 @@
+# -*- coding: utf-8 -*-
+
+# Classe Bichinho Virtual++: Melhore o programa do bichinho virtual,
+# permitindo que o usuário especifique quanto de comida ele fornece ao bichinho e
+# por quanto tempo ele brinca com o bichinho. Faça com que estes valores afetem
+# quão rapidamente os níveis de fome e tédio caem.
+
 from time import time
 
-"""
-Classe Bichinho Virtual++: Melhore o programa do bichinho virtual,
-permitindo que o usuário especifique quanto de comida ele fornece ao bichinho e
-por quanto tempo ele brinca com o bichinho. Faça com que estes valores afetem
-quão rapidamente os níveis de fome e tédio caem.
-"""
 
-
-class Tamagushi:
+class Tamagushi(object):
     def __init__(self, nome):
         self.nome = nome.title()
         self._fome = 100
         self._saude = 100
         self._inicial = time()
 
-    def analiza(self, x):
+    @staticmethod
+    def analiza(x):
         if x > 100:
             return 100
         elif x < 0:

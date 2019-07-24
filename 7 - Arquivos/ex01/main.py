@@ -1,7 +1,7 @@
-"""
-Faça um programa que leia um arquivo texto contendo uma lista de endereços IP e gere um outro arquivo,
-contendo um relatório dos endereços IP válidos e inválidos.
-"""
+# -*- coding: utf-8 -*-
+
+# Faça um programa que leia um arquivo texto contendo uma lista de endereços IP e gere um outro arquivo,
+# contendo um relatório dos endereços IP válidos e inválidos.
 
 
 def read_entrada():

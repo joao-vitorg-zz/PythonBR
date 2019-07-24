@@ -1,17 +1,16 @@
+# -*- coding: utf-8 -*-
+
+# Para tentar resolver este problema, o Administrador de Rede precisa saber qual o espaço ocupado pelos usuários,
+# e identificar os usuários com maior espaço ocupado. Através de um programa, baixado da Internet, ele conseguiu gerar o
+# seguinte arquivo, chamado "usuarios.json"
+# coloque os arquivos na pasta usuários.
+# A ACME Inc., uma empresa de 500 funcionários, está tendo problemas de espaço em disco no seu servidor de arquivos.
+
 import webbrowser as web
 from os import scandir
 
-"""
-A ACME Inc., uma empresa de 500 funcionários, está tendo problemas de espaço em disco no seu servidor de arquivos.
-Para tentar resolver este problema, o Administrador de Rede precisa saber qual o espaço ocupado pelos usuários,
-e identificar os usuários com maior espaço ocupado. Através de um programa, baixado da Internet, ele conseguiu gerar o
-seguinte arquivo, chamado "usuarios.json"
 
-coloque os arquivos na pasta usuários.
-"""
-
-
-class ACME:
+class ACME(object):
     def __init__(self):
         user = {folder.name: self.folder_size(folder) for folder in scandir('usuarios') if folder.is_dir()}
         self.total, self.media, self.users = sum(user.values()), 0, ()
